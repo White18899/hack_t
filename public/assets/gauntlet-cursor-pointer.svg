@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <linearGradient id="goldGradActive" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#fef08a" />
+      <stop offset="70%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#a16207" />
+    </linearGradient>
+    <filter id="hyperGlow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Cosmic Energy Halo -->
+  <circle cx="17" cy="17" r="15" fill="none" stroke="#facc15" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.8"/>
+  <!-- Gauntlet Forearm & Hand Outline -->
+  <path d="M8 30 L26 30 L24 19 L27 13 C27 10 24 9 22 10 L21 8 C20 6 17 6 16 8 L15 7 C14 5 11 6 11 8 L10 9 C9 8 7 9 7 11 L8 19 Z" fill="url(#goldGradActive)" stroke="#451a03" stroke-width="1.3" stroke-linejoin="round" />
+  <!-- Mind Stone (Large center) -->
+  <circle cx="17" cy="18" r="2.8" fill="#facc15" stroke="#ffffff" stroke-width="0.8" filter="url(#hyperGlow)"/>
+  <!-- Power Stone (Purple) -->
+  <circle cx="10" cy="11" r="1.5" fill="#c084fc" stroke="#ffffff" stroke-width="0.4" filter="url(#hyperGlow)"/>
+  <!-- Space Stone (Blue) -->
+  <circle cx="13.5" cy="9.5" r="1.5" fill="#38bdf8" stroke="#ffffff" stroke-width="0.4" filter="url(#hyperGlow)"/>
+  <!-- Reality Stone (Red) -->
+  <circle cx="17" cy="9" r="1.5" fill="#f43f5e" stroke="#ffffff" stroke-width="0.4" filter="url(#hyperGlow)"/>
+  <!-- Time Stone (Green) -->
+  <circle cx="20.5" cy="9.5" r="1.5" fill="#4ade80" stroke="#ffffff" stroke-width="0.4" filter="url(#hyperGlow)"/>
+  <!-- Soul Stone (Orange) -->
+  <circle cx="24" cy="12.5" r="1.5" fill="#fb923c" stroke="#ffffff" stroke-width="0.4" filter="url(#hyperGlow)"/>
+  <!-- Pointer Flash -->
+  <polygon points="17,1 18.5,5 22,6.5 18.5,8 17,12 15.5,8 12,6.5 15.5,5" fill="#ffffff" filter="url(#hyperGlow)"/>
+</svg>

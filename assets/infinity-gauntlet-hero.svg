@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Background Cosmic Glows -->
+    <radialGradient id="nebulaCore" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#3b0764" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#1e1b4b" stop-opacity="0.5"/>
+      <stop offset="80%" stop-color="#09090b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#020204" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Gold Gradients for Gauntlet -->
+    <linearGradient id="gauntletGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="25%" stop-color="#eab308"/>
+      <stop offset="60%" stop-color="#ca8a04"/>
+      <stop offset="85%" stop-color="#854d0e"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+
+    <linearGradient id="gauntletHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#fef08a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ca8a04" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Stone Glow Filters -->
+    <filter id="mindGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="stoneGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Energy Nebula -->
+  <rect width="800" height="600" fill="url(#nebulaCore)"/>
+
+  <!-- Energy Shockwave Rings -->
+  <circle cx="400" cy="300" r="240" fill="none" stroke="rgba(234, 179, 8, 0.15)" stroke-width="2" stroke-dasharray="16, 8" />
+  <circle cx="400" cy="300" r="280" fill="none" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5" stroke-dasharray="6, 12" />
+  <circle cx="400" cy="300" r="320" fill="none" stroke="rgba(192, 132, 252, 0.1)" stroke-width="1" />
+
+  <!-- Mystic Mandala Runes (Doctor Strange influence around Time Stone) -->
+  <g transform="translate(465, 175)" opacity="0.7">
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#4ade80" stroke-width="1" stroke-dasharray="4, 4"/>
+    <polygon points="0,-24 20,12 -20,12" fill="none" stroke="#4ade80" stroke-width="0.8"/>
+    <polygon points="0,24 20,-12 -20,-12" fill="none" stroke="#4ade80" stroke-width="0.8"/>
+  </g>
+
+  <!-- GAUNTLET VECTOR ARTWORK -->
+  <g transform="translate(0, 0)">
+    <!-- Forearm / Bracer -->
+    <path d="M280 580 L520 580 L490 390 L310 390 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="4"/>
+    <path d="M310 540 L490 540 M320 480 L480 480 M330 430 L470 430" stroke="#78350f" stroke-width="3"/>
+    
+    <!-- Central Channel / Power Trunk -->
+    <path d="M385 580 L385 390 M415 580 L415 390" stroke="#b45309" stroke-width="2.5"/>
+    <polygon points="400,390 350,470 450,470" fill="#78350f" opacity="0.6"/>
+
+    <!-- Palm / Back of Hand Main Plate -->
+    <path d="M300 390 L500 390 L520 270 L480 210 L320 210 L280 270 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="4"/>
+    <path d="M305 270 L495 270" stroke="#78350f" stroke-width="3"/>
+
+    <!-- Knuckle Sockets & Guard Plates -->
+    <!-- Pinky Finger (Power - Leftmost) -->
+    <path d="M280 270 L260 210 L285 160 L315 210 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="3"/>
+    <!-- Ring Finger (Space) -->
+    <path d="M320 210 L330 140 L365 140 L370 210 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="3"/>
+    <!-- Middle Finger (Reality) -->
+    <path d="M375 210 L385 110 L415 110 L425 210 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="3"/>
+    <!-- Index Finger (Time) -->
+    <path d="M430 210 L435 140 L470 140 L480 210 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="3"/>
+    <!-- Thumb (Soul - Right side) -->
+    <path d="M500 340 L560 300 L580 240 L530 230 L490 280 Z" fill="url(#gauntletGold)" stroke="#291002" stroke-width="3"/>
+
+    <!-- Highlights & Bevels -->
+    <path d="M315 220 L485 220 L465 240 L335 240 Z" fill="url(#gauntletHighlight)"/>
+
+    <!-- ============================================== -->
+    <!-- THE 6 PRIMORDIAL INFINITY STONES               -->
+    <!-- ============================================== -->
+
+    <!-- 1. MIND STONE (Large Centerpiece on Hand Back) -->
+    <g transform="translate(400, 310)">
+      <!-- Pulsing Aura -->
+      <circle cx="0" cy="0" r="42" fill="rgba(250, 204, 21, 0.25)" filter="url(#mindGlow)"/>
+      <circle cx="0" cy="0" r="28" fill="rgba(254, 240, 138, 0.4)"/>
+      <!-- Gem Facet Polygon -->
+      <polygon points="0,-24 20,-8 16,18 -16,18 -20,-8" fill="#facc15" stroke="#ffffff" stroke-width="2.5" filter="url(#stoneGlow)"/>
+      <polygon points="0,-16 12,-4 10,12 -10,12 -12,-4" fill="#fef08a" opacity="0.8"/>
+      <circle cx="-4" cy="-8" r="4" fill="#ffffff" opacity="0.9"/>
+    </g>
+
+    <!-- 2. POWER STONE (Purple - Knuckle 1, Left) -->
+    <g transform="translate(290, 195)">
+      <circle cx="0" cy="0" r="22" fill="rgba(192, 132, 252, 0.35)" filter="url(#stoneGlow)"/>
+      <polygon points="0,-14 12,-4 8,10 -8,10 -12,-4" fill="#c084fc" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="-2" cy="-4" r="2.5" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+    <!-- 3. SPACE STONE (Blue / Cyan - Knuckle 2) -->
+    <g transform="translate(348, 175)">
+      <circle cx="0" cy="0" r="22" fill="rgba(56, 189, 248, 0.35)" filter="url(#stoneGlow)"/>
+      <polygon points="0,-14 12,-4 8,10 -8,10 -12,-4" fill="#38bdf8" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="-2" cy="-4" r="2.5" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+    <!-- 4. REALITY STONE (Red / Crimson - Knuckle 3, Center) -->
+    <g transform="translate(400, 160)">
+      <circle cx="0" cy="0" r="24" fill="rgba(244, 63, 94, 0.4)" filter="url(#stoneGlow)"/>
+      <polygon points="0,-15 13,-4 9,11 -9,11 -13,-4" fill="#f43f5e" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="-2" cy="-4" r="3" fill="#ffffff" opacity="0.9"/>
+    </g>
+
+    <!-- 5. TIME STONE (Emerald Green - Knuckle 4) -->
+    <g transform="translate(452, 175)">
+      <circle cx="0" cy="0" r="22" fill="rgba(74, 222, 128, 0.35)" filter="url(#stoneGlow)"/>
+      <polygon points="0,-14 12,-4 8,10 -8,10 -12,-4" fill="#4ade80" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="-2" cy="-4" r="2.5" fill="#ffffff" opacity="0.8"/>
+    </g>
+
+    <!-- 6. SOUL STONE (Orange - Thumb Socket) -->
+    <g transform="translate(540, 270)">
+      <circle cx="0" cy="0" r="24" fill="rgba(251, 146, 60, 0.35)" filter="url(#stoneGlow)"/>
+      <polygon points="0,-14 12,-4 8,10 -8,10 -12,-4" fill="#fb923c" stroke="#ffffff" stroke-width="1.8"/>
+      <circle cx="-2" cy="-4" r="2.5" fill="#ffffff" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Energy Arcs / Cosmic Lightning -->
+  <path d="M400 310 Q430 240 452 175" fill="none" stroke="#facc15" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+  <path d="M400 310 Q370 240 348 175" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+  <path d="M400 310 Q400 230 400 160" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+  <path d="M400 310 Q480 300 540 270" fill="none" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+  <path d="M400 310 Q330 250 290 195" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.8"/>
+
+  <!-- Cosmic Sparks -->
+  <circle cx="370" cy="130" r="1.5" fill="#ffffff" />
+  <circle cx="430" cy="120" r="2" fill="#ffffff" />
+  <circle cx="510" cy="220" r="1.8" fill="#facc15" />
+  <circle cx="270" cy="230" r="2" fill="#c084fc" />
+  <circle cx="480" cy="240" r="1.5" fill="#4ade80" />
+</svg>

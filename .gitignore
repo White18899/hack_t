@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Environment Variables & Live Credentials
+.env.local
+.env
+
+# Uploads
+public/uploads/*
+!public/uploads/.gitkeep
+
+# System & OS
+.DS_Store
+Thumbs.db
+
+# Scratch test files
+scratch/

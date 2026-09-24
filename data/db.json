@@ -1,0 +1,2657 @@
+{
+  "domains": [
+    {
+      "id": "intelligence",
+      "stoneName": "Mind Stone",
+      "domainName": "INTELLIGENCE",
+      "tagline": "AI • ML • Decision Systems",
+      "description": "Architect autonomous multi-agent networks, neural cognition models, self-refining LLM pipelines, and intelligent decision systems capable of enterprise-scale problem-solving.",
+      "iconName": "Cpu",
+      "stoneSymbol": "The Vision Core",
+      "accentHex": "#facc15",
+      "accentRgb": "250, 204, 21",
+      "techStackSuggestions": [
+        "Python",
+        "PyTorch",
+        "LangChain",
+        "FastAPI",
+        "Gemini API",
+        "TensorFlow"
+      ],
+      "isPsReleased": true,
+      "psReleaseDate": "2026-10-10T09:00:00Z",
+      "problemStatements": [
+        {
+          "id": "ps-intel-01",
+          "code": "PS-INTEL-01",
+          "title": "Quantum-Resistant Telemetry Fabric [RELEASED]",
+          "category": "AI & Decision Systems",
+          "description": "Build an autonomous team of specialized AI agents (Architect, Auditor, Coder, Verifier) that debate trade-offs, execute verification loops, and generate verified artifact packages.",
+          "difficulty": "Advanced",
+          "deliverables": [
+            "Interactive agent trace visualizer UI",
+            "Self-correcting verification testbench",
+            "Multi-modal decision engine integration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "connectivity",
+      "stoneName": "Space Stone",
+      "domainName": "CONNECTIVITY",
+      "tagline": "Cybersecurity • Cloud • Networks",
+      "description": "Forge zero-trust defense architectures, planet-scale cloud networks, high-throughput distributed protocols, and resilient cybersecurity fabrics.",
+      "iconName": "Globe",
+      "stoneSymbol": "The Tesseract",
+      "accentHex": "#38bdf8",
+      "accentRgb": "56, 189, 248",
+      "techStackSuggestions": [
+        "Rust",
+        "Go",
+        "Kubernetes",
+        "eBPF",
+        "Cloudflare Workers",
+        "WireGuard"
+      ],
+      "isPsReleased": false,
+      "psReleaseDate": "2026-10-10T09:00:00Z",
+      "problemStatements": [
+        {
+          "id": "ps-conn-01",
+          "code": "PS-CONN-01",
+          "title": "Zero-Trust Multi-Cloud Mesh Failover & Network Threat Shield",
+          "category": "Cybersecurity & Cloud",
+          "description": "Design a self-healing reverse proxy and global routing daemon that dynamically migrates stateful traffic across multiple cloud providers and edge nodes during regional outages or active DDoS attacks.",
+          "difficulty": "Hardcore",
+          "deliverables": [
+            "Working distributed controller and lightweight edge proxy agent",
+            "Zero-loss connection migration benchmark demonstration",
+            "Real-time threat detection & firewall isolation rules"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digital",
+      "stoneName": "Reality Stone",
+      "domainName": "DIGITAL",
+      "tagline": "Web • Mobile • Digital Platforms",
+      "description": "Bend digital reality. Build hyper-responsive web applications, cross-platform mobile architectures, immersive real-time canvases, and scalable modern platforms.",
+      "iconName": "Sparkles",
+      "stoneSymbol": "The Aether Prism",
+      "accentHex": "#f43f5e",
+      "accentRgb": "244, 63, 94",
+      "techStackSuggestions": [
+        "TypeScript",
+        "React",
+        "Flutter",
+        "Next.js",
+        "Node.js",
+        "WebGL"
+      ],
+      "isPsReleased": false,
+      "psReleaseDate": "2026-10-10T09:00:00Z",
+      "problemStatements": [
+        {
+          "id": "ps-dig-01",
+          "code": "PS-DIG-01",
+          "title": "Sub-30ms Collaborative Digital Canvas & Universal Component Mesh",
+          "category": "Web & Mobile Platforms",
+          "description": "Construct a browser-based and mobile-first real-time workspace enabling multi-user manipulation of high-fidelity state with cryptographic attribution and instant offline synchronization.",
+          "difficulty": "Advanced",
+          "deliverables": [
+            "Interactive cross-platform collaboration UI",
+            "Sub-30ms CRDT state synchronization pipeline",
+            "Offline-first progressive synchronization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "stoneName": "Power Stone",
+      "domainName": "AUTOMATION",
+      "tagline": "IoT • Robotics • Embedded Systems",
+      "description": "Unleash physical and digital kinetic power. Develop autonomous robotics, smart hardware controllers, industrial IoT pipelines, and embedded real-time systems.",
+      "iconName": "Shield",
+      "stoneSymbol": "The Kinetic Orb",
+      "accentHex": "#c084fc",
+      "accentRgb": "192, 132, 252",
+      "techStackSuggestions": [
+        "C++",
+        "Rust",
+        "ESP32 / Arduino",
+        "ROS2",
+        "MQTT",
+        "FreeRTOS"
+      ],
+      "isPsReleased": false,
+      "psReleaseDate": "2026-10-10T09:00:00Z",
+      "problemStatements": [
+        {
+          "id": "ps-auto-01",
+          "code": "PS-AUTO-01",
+          "title": "Autonomous Edge Robotics Fleet Controller & Sensor Telemetry Hub",
+          "category": "Robotics & Embedded Systems",
+          "description": "Develop a microsecond telemetry agent and swarm control hub that continuously coordinates robotic actuators and IoT sensors, isolating hardware faults automatically.",
+          "difficulty": "Hardcore",
+          "deliverables": [
+            "Hardware-in-the-loop or simulation telemetry interface",
+            "Autonomous failover daemon for robotic actuators",
+            "Real-time metrics visualizer with latency histograms"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analytics",
+      "stoneName": "Time Stone",
+      "domainName": "ANALYTICS",
+      "tagline": "Data • Prediction • Optimization",
+      "description": "Control temporal velocity. Engineer real-time streaming pipelines, high-throughput predictive time-series models, algorithmic optimization engines, and big data intelligence.",
+      "iconName": "Clock",
+      "stoneSymbol": "The Eye of Agamotto",
+      "accentHex": "#4ade80",
+      "accentRgb": "74, 222, 128",
+      "techStackSuggestions": [
+        "Python",
+        "Kafka",
+        "ClickHouse",
+        "Pandas",
+        "DuckDB",
+        "Scikit-Learn"
+      ],
+      "isPsReleased": true,
+      "psReleaseDate": "2026-10-10T09:00:00Z",
+      "problemStatements": [
+        {
+          "id": "ps-ana-01",
+          "code": "PS-ANA-01",
+          "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+          "category": "Data & Prediction",
+          "description": "Engineer an event-driven analytical router that processes high-throughput telemetry streams, predicts impending anomaly spikes using micro-statistical models, and dynamically optimizes execution paths.",
+          "difficulty": "Hardcore",
+          "deliverables": [
+            "Real-time streaming pipeline processing benchmarks",
+            "Live statistical prediction vs naive forecast models",
+            "Visual telemetry interface with latency histograms"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "impact",
+      "stoneName": "Soul Stone",
+      "domainName": "IMPACT",
+      "tagline": "Healthcare • Agriculture • Education • Social Good",
+      "description": "Channel technology to transform lives. Pioneer accessible healthcare diagnostics, precision agricultural sensors, adaptive educational tools, and sustainable social impact networks.",
+      "iconName": "Heart",
+      "stoneSymbol": "The Cosmic Singularity",
+      "accentHex": "#fb923c",
+      "accentRgb": "251, 146, 60",
+      "techStackSuggestions": [
+        "Python",
+        "Flutter",
+        "PostgreSQL",
+        "FastAPI",
+        "Edge AI",
+        "OpenCV"
+      ],
+      "isPsReleased": false,
+      "psReleaseDate": "2026-10-10T09:00:00Z",
+      "problemStatements": [
+        {
+          "id": "ps-imp-01",
+          "code": "PS-IMP-01",
+          "title": "Decentralized Community Healthcare Triage & Precision Agriculture Telemetry",
+          "category": "HealthTech & Social Impact",
+          "description": "Construct a privacy-preserving triage engine and sensor aggregation hub for underserved rural communities that pairs offline-first inference with automated resource distribution.",
+          "difficulty": "Advanced",
+          "deliverables": [
+            "Offline-first progressive web and mobile application",
+            "Differential-privacy epidemiological & soil telemetry dashboard",
+            "SMS/WhatsApp fallback alerting pipeline"
+          ]
+        }
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "id": "INF-2049",
+      "teamName": "Stark Coders",
+      "college": "MIT World Peace University",
+      "preferredDomain": "space",
+      "techStack": [
+        "Rust",
+        "Kubernetes",
+        "Next.js",
+        "Docker"
+      ],
+      "teamSize": 4,
+      "leader": {
+        "name": "Tony Stark",
+        "email": "tony@stark.io",
+        "phone": "9876543210"
+      },
+      "teamPassword": "starkpassword",
+      "members": [
+        {
+          "name": "James Rhodes",
+          "email": "rhodey@mit.edu",
+          "phone": "9876543211",
+          "collegeId": "MIT-CS-2024"
+        },
+        {
+          "name": "Pepper Potts",
+          "email": "pepper@mit.edu",
+          "phone": "9876543212",
+          "collegeId": "MIT-EC-2024"
+        },
+        {
+          "name": "Happy Hogan",
+          "email": "happy@mit.edu",
+          "phone": "9876543213",
+          "collegeId": "MIT-IT-2025"
+        }
+      ],
+      "payment": {
+        "utr": "409281726481",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "ocrDetectedUtr": "409281726481",
+        "ocrDetectedPhone": "9876543210",
+        "amount": 300,
+        "status": "verified",
+        "verifiedAt": "2026-09-23T18:00:00.000Z",
+        "notes": "Verified via Bank Portal"
+      },
+      "createdAt": "2026-09-23T17:30:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8192",
+      "teamName": "Visionary Synapse",
+      "college": "National Institute of Technology",
+      "preferredDomain": "mind",
+      "techStack": [
+        "Python",
+        "PyTorch",
+        "FastAPI",
+        "Gemini API"
+      ],
+      "teamSize": 3,
+      "leader": {
+        "name": "Wanda Maximoff",
+        "email": "wanda@nit.edu",
+        "phone": "9876543210"
+      },
+      "teamPassword": "mindstonepass",
+      "members": [
+        {
+          "name": "Vision Synth",
+          "email": "vision@nit.edu",
+          "phone": "9812345678",
+          "collegeId": "NIT-AI-902"
+        },
+        {
+          "name": "Pietro Maximoff",
+          "email": "pietro@nit.edu",
+          "phone": "9812345679",
+          "collegeId": "NIT-CS-904"
+        }
+      ],
+      "payment": {
+        "utr": "518293049182",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "ocrDetectedUtr": "518293049182",
+        "ocrDetectedPhone": "9876543210",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-23T18:15:00.000Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6757",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "power",
+      "techStack": [
+        "Rust",
+        "Circom",
+        "C++"
+      ],
+      "teamSize": 3,
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor@asgard.gov",
+        "phone": "9876543210"
+      },
+      "teamPassword": "thorpassword",
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "payment": {
+        "utr": "981273645120",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-23T14:35:16.171Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8116",
+      "teamName": "Guardians of Code",
+      "college": "Knowhere Institute of Tech",
+      "preferredDomain": "soul",
+      "techStack": [],
+      "teamSize": 3,
+      "leader": {
+        "name": "Peter Quill",
+        "email": "quill@guardians.space",
+        "phone": "9876543299"
+      },
+      "teamPassword": "groot123",
+      "members": [
+        {
+          "name": "Gamora",
+          "email": "gamora@guardians.space",
+          "phone": "9876543298"
+        },
+        {
+          "name": "Rocket",
+          "email": "rocket@guardians.space",
+          "phone": "9876543297"
+        }
+      ],
+      "payment": {
+        "utr": "339911882244",
+        "phone": "9876543299",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-23T15:02:08.387Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3023",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "power",
+      "techStack": [],
+      "teamSize": 3,
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790177840108@asgard.gov",
+        "phone": "9876543210"
+      },
+      "teamPassword": "thorpassword",
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "payment": {
+        "utr": "984975241255",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-23T15:37:20.311Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1268",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "techStack": [],
+      "teamSize": 3,
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790179122156@asgard.gov",
+        "phone": "9876543210"
+      },
+      "teamPassword": "thorpassword",
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "payment": {
+        "utr": "986172061847",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-23T15:58:42.309Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6593",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790180780108@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "985967527141",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-23T16:26:20.700Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-23T16:26:20.700Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9686",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790180804129@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-23T16:26:45.667Z"
+      },
+      "payment": {
+        "utr": "986652680436",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-23T16:26:44.346Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-23T16:26:44.346Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6457",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790181960825@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-23T16:46:02.088Z"
+      },
+      "payment": {
+        "utr": "989090900719",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-23T16:46:01.154Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-23T16:46:01.154Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9564",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790182331562@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-23T16:52:12.752Z"
+      },
+      "payment": {
+        "utr": "989713880493",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-23T16:52:11.742Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-23T16:52:11.742Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3647",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790182844605@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-23T17:00:45.987Z"
+      },
+      "payment": {
+        "utr": "981033544349",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-23T17:00:44.916Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-23T17:00:44.916Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-2013",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790218096742@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T02:48:18.801Z"
+      },
+      "payment": {
+        "utr": "983885502162",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T02:48:17.829Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T02:48:17.829Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3650",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790218648827@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T02:57:30.940Z"
+      },
+      "payment": {
+        "utr": "989071858326",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T02:57:29.438Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T02:57:29.438Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8154",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790218916554@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:01:57.678Z"
+      },
+      "payment": {
+        "utr": "987707589183",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:01:56.809Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:01:56.809Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1928",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790218996021@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:03:17.214Z"
+      },
+      "payment": {
+        "utr": "985204359896",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:03:16.308Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:03:16.308Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-5133",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790219294521@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:08:16.313Z"
+      },
+      "payment": {
+        "utr": "982202347404",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:08:15.083Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:08:15.083Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-7870",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790219572107@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:12:54.389Z"
+      },
+      "payment": {
+        "utr": "987120219106",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:12:53.365Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:12:53.366Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8380",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790220783666@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:33:05.121Z"
+      },
+      "payment": {
+        "utr": "987139107196",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:33:04.201Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:33:04.201Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-4215",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790220815800@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "982365240621",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:33:35.971Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T03:33:35.971Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1663",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790221694656@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "981520632311",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:48:14.857Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T03:48:14.857Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6075",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790221783511@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:49:44.763Z"
+      },
+      "payment": {
+        "utr": "988849889673",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:49:43.776Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:49:43.776Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-2259",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790221799324@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "983869501174",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:49:59.487Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T03:49:59.487Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8502",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790222387637@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T03:59:48.780Z"
+      },
+      "payment": {
+        "utr": "981732639358",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:59:48.016Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T03:59:48.016Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3111",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790222397012@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "982738735594",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T03:59:57.203Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T03:59:57.203Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3707",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790224205764@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "985889117715",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T04:30:06.035Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T04:30:06.035Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-7693",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790224219594@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T04:30:20.811Z"
+      },
+      "payment": {
+        "utr": "985314548134",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T04:30:19.840Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T04:30:19.840Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-2315",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790224977389@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "987645451820",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T04:42:57.619Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T04:42:57.619Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8505",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790224988430@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T04:43:10.471Z"
+      },
+      "payment": {
+        "utr": "981986123009",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T04:43:09.284Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T04:43:09.285Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9663",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790225600075@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "988257810043",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T04:53:20.382Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T04:53:20.382Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9242",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790225613049@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T04:53:34.317Z"
+      },
+      "payment": {
+        "utr": "985273881918",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T04:53:33.365Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T04:53:33.365Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9088",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790226290774@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "986835728939",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:04:51.022Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:04:51.022Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-2417",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790226305155@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:05:06.876Z"
+      },
+      "payment": {
+        "utr": "984416210088",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:05:05.457Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:05:05.457Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1316",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790226621968@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "989038361504",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:10:22.154Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:10:22.154Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-7585",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790226631512@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:10:33.058Z"
+      },
+      "payment": {
+        "utr": "988343346908",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:10:31.808Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:10:31.808Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1390",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790226758153@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "983211222243",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:12:38.309Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:12:38.309Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-7585",
+      "teamName": "Quantum Avengers",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790226765670@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:12:46.885Z"
+      },
+      "payment": {
+        "utr": "983441409422",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:12:45.935Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:12:45.935Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3840",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790226998570@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "988629067001",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:16:38.749Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:16:38.749Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1178",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790227005939@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:16:46.935Z"
+      },
+      "payment": {
+        "utr": "984728561335",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:16:46.164Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:16:46.164Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9607",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790227041308@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "981214472611",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:17:21.490Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:17:21.490Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-5263",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790227331040@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "985240657640",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:22:11.234Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:22:11.234Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-4112",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790227344693@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:22:25.768Z"
+      },
+      "payment": {
+        "utr": "983856600419",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:22:24.936Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:22:24.936Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6043",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790227620842@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "987458798438",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:27:01.043Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:27:01.043Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6479",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790227632352@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:27:13.441Z"
+      },
+      "payment": {
+        "utr": "988687600122",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:27:12.582Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:27:12.582Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9756",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790227869767@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "988095071559",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:31:09.958Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:31:09.958Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-2241",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790227884722@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:31:26.081Z"
+      },
+      "payment": {
+        "utr": "986160331143",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:31:25.199Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:31:25.199Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-8440",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790228075608@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "987209198184",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:34:35.833Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:34:35.833Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-5296",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790228090422@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:34:51.893Z"
+      },
+      "payment": {
+        "utr": "981375797728",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:34:50.901Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:34:50.901Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-5509",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790228143754@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "986124718622",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:35:44.011Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T05:35:44.011Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-4358",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790228154535@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T05:35:55.743Z"
+      },
+      "payment": {
+        "utr": "982988763938",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T05:35:54.785Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T05:35:54.785Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1167",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790230184429@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "989856530814",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T06:09:44.664Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T06:09:44.664Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-5275",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790230223142@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T06:10:24.296Z"
+      },
+      "payment": {
+        "utr": "989893103139",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T06:10:23.450Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T06:10:23.450Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6487",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790230550356@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "981309837859",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T06:15:50.560Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T06:15:50.560Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-4815",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790237149403@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T08:05:52.139Z"
+      },
+      "payment": {
+        "utr": "981839774898",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T08:05:50.700Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T08:05:50.700Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6495",
+      "teamName": "Size Test 4",
+      "college": "Size Test College",
+      "preferredDomain": "intelligence",
+      "teamSize": 4,
+      "teamPassword": "pass1234",
+      "leader": {
+        "name": "Test Leader",
+        "email": "leader_1790237173459_4@test.edu",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "M0",
+          "email": "m0@test.edu",
+          "phone": "9876543210"
+        },
+        {
+          "name": "M1",
+          "email": "m1@test.edu",
+          "phone": "9876543210"
+        },
+        {
+          "name": "M2",
+          "email": "m2@test.edu",
+          "phone": "9876543210"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "UTR17902371734594",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T08:06:13.697Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T08:06:13.697Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3586",
+      "teamName": "Size Test 3",
+      "college": "Size Test College",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "pass1234",
+      "leader": {
+        "name": "Test Leader",
+        "email": "leader_1790237174278_3@test.edu",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "M0",
+          "email": "m0@test.edu",
+          "phone": "9876543210"
+        },
+        {
+          "name": "M1",
+          "email": "m1@test.edu",
+          "phone": "9876543210"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "UTR17902371742793",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T08:06:14.605Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-24T08:06:14.605Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9905",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790238210763@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T08:23:34.161Z"
+      },
+      "payment": {
+        "utr": "984444176479",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T08:23:31.033Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T08:23:31.033Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-4104",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790238318231@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T08:25:19.586Z"
+      },
+      "payment": {
+        "utr": "989215338042",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T08:25:18.506Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T08:25:18.506Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-9094",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790251950831@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T12:12:35.230Z"
+      },
+      "payment": {
+        "utr": "989208017906",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T12:12:31.726Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T12:12:31.726Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3473",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790252944322@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T12:29:05.739Z"
+      },
+      "payment": {
+        "utr": "984561234593",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T12:29:04.661Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T12:29:04.661Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1825",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "starksecret123",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790254050998@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-24T12:47:32.884Z"
+      },
+      "payment": {
+        "utr": "981754084525",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-24T12:47:31.314Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-24T12:47:31.314Z",
+      "status": "confirmed"
+    }
+  ]
+}

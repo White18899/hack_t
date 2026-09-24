@@ -1,0 +1,190 @@
+/* ===================================================================
+   NEO-BRUTALIST TARGET CURSOR (REACT BITS COMPONENT)
+   Theme: Marvel Infinity Stones Neo-Brutalism
+   Aesthetic: Heavy geometric HUD brackets, tactical diamond reticle,
+              hard offset brutalist drop-shadows, adaptive color immunity.
+   =================================================================== */
+
+.target-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Center Diamond Reticle */
+.target-cursor-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--stone-mind, #FFE600);
+  border: 2px solid #000000;
+  box-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.95);
+  border-radius: 0px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  will-change: transform, background-color, border-color, box-shadow;
+  transition: background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 4 Chunky Neo-Brutalist L-Bracket Corners */
+.target-cursor-corner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border-radius: 0px;
+  will-change: transform, border-color, filter;
+  transition: border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Corner Bracket Geometries (3.5px solid chunky brutalist borders) */
+.corner-tl {
+  transform: translate(-150%, -150%);
+  border-top: 3.5px solid #000000;
+  border-left: 3.5px solid #000000;
+  border-right: none;
+  border-bottom: none;
+  filter: drop-shadow(2px 2px 0px var(--stone-mind, #FFE600));
+}
+
+.corner-tr {
+  transform: translate(50%, -150%);
+  border-top: 3.5px solid #000000;
+  border-right: 3.5px solid #000000;
+  border-left: none;
+  border-bottom: none;
+  filter: drop-shadow(2px 2px 0px var(--stone-mind, #FFE600));
+}
+
+.corner-br {
+  transform: translate(50%, 50%);
+  border-bottom: 3.5px solid #000000;
+  border-right: 3.5px solid #000000;
+  border-left: none;
+  border-top: none;
+  filter: drop-shadow(2px 2px 0px var(--stone-mind, #FFE600));
+}
+
+.corner-bl {
+  transform: translate(-150%, 50%);
+  border-bottom: 3.5px solid #000000;
+  border-left: 3.5px solid #000000;
+  border-right: none;
+  border-top: none;
+  filter: drop-shadow(2px 2px 0px var(--stone-mind, #FFE600));
+}
+
+/* ===================================================================
+   ADAPTIVE COLOR IMMUNITY THEMES
+   =================================================================== */
+
+/* 1. DARK / BLACK BACKGROUNDS */
+.target-cursor-wrapper.cursor-theme-dark .corner-tl,
+.target-cursor-wrapper.cursor-theme-dark .corner-tr,
+.target-cursor-wrapper.cursor-theme-dark .corner-br,
+.target-cursor-wrapper.cursor-theme-dark .corner-bl {
+  border-color: var(--stone-mind, #FFE600);
+  filter: drop-shadow(2px 2px 0px #000000) drop-shadow(-1px -1px 0px rgba(255, 255, 255, 0.85));
+}
+.target-cursor-wrapper.cursor-theme-dark .target-cursor-dot {
+  background: var(--stone-mind, #FFE600);
+  border-color: #000000;
+  box-shadow: 1.5px 1.5px 0px #000000;
+}
+
+/* 2. BRIGHT YELLOW BACKGROUNDS */
+.target-cursor-wrapper.cursor-theme-yellow .corner-tl,
+.target-cursor-wrapper.cursor-theme-yellow .corner-tr,
+.target-cursor-wrapper.cursor-theme-yellow .corner-br,
+.target-cursor-wrapper.cursor-theme-yellow .corner-bl {
+  border-color: #000000;
+  filter: drop-shadow(2px 2px 0px var(--stone-reality, #FF0055)) drop-shadow(-1px -1px 0px #FFFFFF);
+}
+.target-cursor-wrapper.cursor-theme-yellow .target-cursor-dot {
+  background: var(--stone-reality, #FF0055);
+  border-color: #000000;
+  box-shadow: 1.5px 1.5px 0px #000000;
+}
+
+/* 3. LIGHT / WHITE / CREAM GRID BACKGROUNDS */
+.target-cursor-wrapper.cursor-theme-light .corner-tl,
+.target-cursor-wrapper.cursor-theme-light .corner-tr,
+.target-cursor-wrapper.cursor-theme-light .corner-br,
+.target-cursor-wrapper.cursor-theme-light .corner-bl {
+  border-color: #000000;
+  filter: drop-shadow(2px 2px 0px var(--stone-mind, #FFE600));
+}
+.target-cursor-wrapper.cursor-theme-light .target-cursor-dot {
+  background: var(--stone-mind, #FFE600);
+  border-color: #000000;
+  box-shadow: 1.5px 1.5px 0px rgba(0, 0, 0, 0.85);
+}
+
+/* ===================================================================
+   TARGET LOCKED STATE (TACTICAL HUD LOCK-ON)
+   =================================================================== */
+.target-cursor-wrapper.is-targeting .target-cursor-corner {
+  width: 18px;
+  height: 18px;
+}
+
+.target-cursor-wrapper.is-targeting .corner-tl,
+.target-cursor-wrapper.is-targeting .corner-tr,
+.target-cursor-wrapper.is-targeting .corner-br,
+.target-cursor-wrapper.is-targeting .corner-bl {
+  border-width: 4px;
+  border-color: #000000;
+  filter: drop-shadow(3px 3px 0px var(--stone-mind, #FFE600));
+}
+
+.target-cursor-wrapper.is-targeting.cursor-theme-yellow .corner-tl,
+.target-cursor-wrapper.is-targeting.cursor-theme-yellow .corner-tr,
+.target-cursor-wrapper.is-targeting.cursor-theme-yellow .corner-br,
+.target-cursor-wrapper.is-targeting.cursor-theme-yellow .corner-bl {
+  border-color: #000000;
+  filter: drop-shadow(3px 3px 0px var(--stone-reality, #FF0055)) drop-shadow(-1px -1px 0px #FFFFFF);
+}
+
+.target-cursor-wrapper.is-targeting.cursor-theme-dark .corner-tl,
+.target-cursor-wrapper.is-targeting.cursor-theme-dark .corner-tr,
+.target-cursor-wrapper.is-targeting.cursor-theme-dark .corner-br,
+.target-cursor-wrapper.is-targeting.cursor-theme-dark .corner-bl {
+  border-color: var(--stone-mind, #FFE600);
+  filter: drop-shadow(3px 3px 0px #000000) drop-shadow(-1px -1px 0px rgba(255, 255, 255, 0.9));
+}
+
+.target-cursor-wrapper.is-targeting .target-cursor-dot {
+  background: var(--stone-reality, #FF0055);
+  border-color: #000000;
+  box-shadow: 2px 2px 0px #000000;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.15);
+}
+
+/* Hide default cursor on desktop when active */
+@media (min-width: 769px) {
+  body.target-cursor-active,
+  body.target-cursor-active a,
+  body.target-cursor-active button,
+  body.target-cursor-active input,
+  body.target-cursor-active select,
+  body.target-cursor-active textarea,
+  body.target-cursor-active .cursor-target,
+  body.target-cursor-active .btn-brutal,
+  body.target-cursor-active .btn-claim-stone {
+    cursor: none !important;
+  }
+}
