@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "pages:dev": "wrangler pages dev public --compatibility-flags=nodejs_compat",
+    "pages:deploy": "wrangler pages deploy public --project-name=infinity-hackathon-2026",
+    "deploy": "wrangler pages deploy public --project-name=infinity-hackathon-2026"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.670.0",

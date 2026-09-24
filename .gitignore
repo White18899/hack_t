@@ -15,3 +15,8 @@ Thumbs.db
 
 # Scratch test files
 scratch/
+
+# Cloudflare Wrangler build artifacts
+.wrangler/
+_worker.bundle
+

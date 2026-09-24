@@ -137,10 +137,29 @@ hack_t/
 
 ---
 
-## 4. How to Run
+## 4. How to Run & Deploy
+
+### A. Live Cloudflare Pages Production
+* **Public Homepage & Leader Portal**: **[https://infinity-hackathon-2026.pages.dev](https://infinity-hackathon-2026.pages.dev)**
+* **Organizer Admin Console**: **[https://infinity-hackathon-2026.pages.dev/admin](https://infinity-hackathon-2026.pages.dev/admin)**
+* **Architecture**: Cloudflare Pages + Pages Functions (`functions/api/[[catchall]].js`) with native edge R2 storage (`infinity-hackathon-bucket`).
 
 ```bash
-# 1. Start Node.js Server
+# Deploy latest changes directly to Cloudflare Pages:
+npm run deploy
+# or
+npm run pages:deploy
+
+# Run Cloudflare Pages locally with edge functions & R2:
+npm run pages:dev
+```
+
+### B. Local Node.js Development Server
+
+```bash
+# 1. Start Local Express Server
+npm run dev
+# or
 node server.js
 
 # 2. Public Home & Leader Portal
@@ -149,3 +168,4 @@ http://localhost:3000
 # 3. Dedicated Organizer Admin Console
 http://localhost:3000/admin
 ```
+
