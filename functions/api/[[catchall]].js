@@ -1,12 +1,7 @@
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
 import * as XLSX from 'xlsx';
 
-// Default / fallback configurations
-const DEFAULT_ACCOUNT_ID = '69bba0cb37d6435b937a6e480164c7b3';
-const DEFAULT_ACCESS_KEY = '5e3529888b0684be7ba2da3fe4cbfcf5';
-const DEFAULT_SECRET_KEY = 'a4761934b0edbaf6ff2344788d9d302a7121e491184c845a25a930caaa23650a';
-const DEFAULT_BUCKET = 'infinity-hackathon-bucket';
-const DEFAULT_PUBLIC_DOMAIN = 'https://pub-aa1b426e7ec64c31a70bdd49676fdec1.r2.dev';
+// Storage Configuration
 const R2_DB_KEY = 'state/database.json';
 
 const CORS_HEADERS = {
@@ -26,9 +21,10 @@ function jsonResponse(data, status = 200) {
 }
 
 function getS3Client(env) {
-  const accountId = env.CLOUDFLARE_R2_ACCOUNT_ID || DEFAULT_ACCOUNT_ID;
-  const accessKeyId = env.CLOUDFLARE_R2_ACCESS_KEY_ID || DEFAULT_ACCESS_KEY;
-  const secretAccessKey = env.CLOUDFLARE_R2_SECRET_ACCESS_KEY || DEFAULT_SECRET_KEY;
+  const accountId = env.CLOUDFLARE_R2_ACCOUNT_ID;
+  const accessKeyId = env.CLOUDFLARE_R2_ACCESS_KEY_ID;
+  const secretAccessKey = env.CLOUDFLARE_R2_SECRET_ACCESS_KEY;
+  if (!accountId || !accessKeyId || !secretAccessKey) return null;
 
   return new S3Client({
     region: 'auto',
@@ -242,7 +238,8 @@ async function saveDb(data, env) {
   // 2. Try S3 API client
   try {
     const s3 = getS3Client(env);
-    const bucketName = env.CLOUDFLARE_R2_BUCKET_NAME || DEFAULT_BUCKET;
+    if (!s3) return;
+    const bucketName = env.CLOUDFLARE_R2_BUCKET_NAME || 'infinity-hackathon-bucket';
     await s3.send(new PutObjectCommand({
       Bucket: bucketName,
       Key: R2_DB_KEY,
@@ -255,7 +252,7 @@ async function saveDb(data, env) {
 }
 
 async function uploadFileToR2(arrayBuffer, key, contentType, env) {
-  const publicDomain = (env.CLOUDFLARE_R2_PUBLIC_DOMAIN || DEFAULT_PUBLIC_DOMAIN).replace(/\/$/, '');
+  const publicDomain = (env.CLOUDFLARE_R2_PUBLIC_DOMAIN || '').replace(/\/$/, '');
 
   // 1. Try Native R2 Binding
   if (env.BUCKET) {
@@ -508,16 +505,39 @@ export async function onRequest(context) {
         return jsonResponse({ success: false, error: 'Passphrase is required.' }, 400);
       }
       if (password === secret) {
-        const token = btoa(`admin_clearance_${Date.now()}`);
+        const token = btoa(`shield_clearance_${Date.now()}_${Math.random().toString(36).substring(2)}`);
         return jsonResponse({ success: true, token, message: 'Organizer clearance granted.' }, 200);
       }
       return jsonResponse({ success: false, error: 'Invalid admin passphrase.' }, 401);
     }
 
+    // Guard all administrative endpoints
+    if (pathname.startsWith('/api/admin') && pathname !== '/api/admin/login') {
+      const secret = env.ADMIN_SECRET || 'admin123';
+      const authHeader = request.headers.get('Authorization') || '';
+      const queryToken = url.searchParams.get('token');
+      let token = null;
+
+      if (authHeader.startsWith('Bearer ')) {
+        token = authHeader.slice(7).trim();
+      } else if (queryToken) {
+        token = queryToken.trim();
+      }
+
+      if (!token || (token !== secret && token.length < 10)) {
+        return jsonResponse({ success: false, error: 'Access Denied: S.H.I.E.L.D. Level 10 Clearance authorization required.' }, 401);
+      }
+    }
+
     // 7. GET /api/admin/teams
     if (pathname === '/api/admin/teams' && method === 'GET') {
       const db = await loadDb(env);
-      return jsonResponse({ success: true, teams: db.teams });
+      const safeTeams = (db.teams || []).map(t => {
+        const copy = { ...t };
+        delete copy.teamPassword;
+        return copy;
+      });
+      return jsonResponse({ success: true, teams: safeTeams });
     }
 
     // 8. PUT /api/admin/teams/:id

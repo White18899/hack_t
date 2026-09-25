@@ -2,11 +2,24 @@ import { S3Client, PutObjectCommand, GetObjectCommand, ListObjectsV2Command } fr
 import fs from 'fs';
 import path from 'path';
 
-const accountId = '69bba0cb37d6435b937a6e480164c7b3';
-const accessKeyId = '5e3529888b0684be7ba2da3fe4cbfcf5';
-const secretAccessKey = 'a4761934b0edbaf6ff2344788d9d302a7121e491184c845a25a930caaa23650a';
-const bucketName = 'infinity-hackathon-bucket';
-const publicUrl = 'https://pub-aa1b426e7ec64c31a70bdd49676fdec1.r2.dev';
+import dotenv from 'dotenv';
+
+if (fs.existsSync('.env.local')) {
+  dotenv.config({ path: '.env.local' });
+} else {
+  dotenv.config();
+}
+
+const accountId = process.env.CLOUDFLARE_R2_ACCOUNT_ID;
+const accessKeyId = process.env.CLOUDFLARE_R2_ACCESS_KEY_ID;
+const secretAccessKey = process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY;
+const bucketName = process.env.CLOUDFLARE_R2_BUCKET_NAME || 'infinity-hackathon-bucket';
+const publicUrl = process.env.CLOUDFLARE_R2_PUBLIC_DOMAIN;
+
+if (!accountId || !accessKeyId || !secretAccessKey) {
+  console.log('[R2 Config] Credentials not configured in environment variables. Set them in .env.local to test.');
+  process.exit(0);
+}
 
 async function testR2Live() {
   console.log('--- TESTING LIVE CLOUDFLARE R2 CONNECTION ---');

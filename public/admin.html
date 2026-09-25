@@ -524,12 +524,23 @@
       window.location.reload();
     }
 
+    function getAdminAuthHeaders() {
+      const token = sessionStorage.getItem('shield_auth') || '';
+      return { 'Authorization': `Bearer ${token}` };
+    }
+
     async function loadAllData() {
       try {
         const [teamsRes, domainsRes] = await Promise.all([
-          fetch('/api/admin/teams'),
+          fetch('/api/admin/teams', { headers: getAdminAuthHeaders() }),
           fetch('/api/domains')
         ]);
+
+        if (teamsRes.status === 401) {
+          logoutAdmin();
+          return;
+        }
+
         const teamsData = await teamsRes.json();
         const domainsData = await domainsRes.json();
 
@@ -654,7 +665,7 @@
       try {
         const res = await fetch('/api/admin/domains', {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
           body: JSON.stringify(domain),
         });
         const data = await res.json();
@@ -670,7 +681,7 @@
       try {
         const res = await fetch(`/api/admin/teams/${teamId}`, {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
           body: JSON.stringify({ payment: { status } }),
         });
         const data = await res.json();
@@ -735,7 +746,7 @@
       try {
         const res = await fetch(`/api/admin/teams/${teamId}`, {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getAdminAuthHeaders() },
           body: JSON.stringify(payload),
         });
         const data = await res.json();
@@ -758,7 +769,10 @@
       if (!confirm(`Are you sure you want to permanently delete squad "${squadName}" (${teamId})?`)) return;
 
       try {
-        const res = await fetch(`/api/admin/teams/${teamId}`, { method: 'DELETE' });
+        const res = await fetch(`/api/admin/teams/${teamId}`, {
+          method: 'DELETE',
+          headers: getAdminAuthHeaders()
+        });
         const data = await res.json();
         if (data.success) {
           allTeams = allTeams.filter(t => t.id !== teamId);
@@ -779,7 +793,8 @@
     }
 
     function downloadExcel() {
-      window.location.href = '/api/admin/export';
+      const token = sessionStorage.getItem('shield_auth') || '';
+      window.location.href = `/api/admin/export?token=${encodeURIComponent(token)}`;
     }
   </script>
 

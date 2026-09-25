@@ -79,13 +79,17 @@ async function runAutomatedTests() {
   });
   const adminLoginData = await adminLoginRes.json();
   console.log(`[PASS] Admin Authentication: Success = ${adminLoginData.success}`);
+  const adminHeaders = {
+    'Authorization': `Bearer ${adminLoginData.token}`,
+    'Content-Type': 'application/json',
+  };
 
-  const adminTeamsRes = await fetch(`${baseUrl}/api/admin/teams`);
+  const adminTeamsRes = await fetch(`${baseUrl}/api/admin/teams`, { headers: adminHeaders });
   const adminTeamsData = await adminTeamsRes.json();
   console.log(`[PASS] Admin Squads Table: Retrieved ${adminTeamsData.teams.length} registered squads`);
 
   // Test 7: Admin Excel Export
-  const exportRes = await fetch(`${baseUrl}/api/admin/export`);
+  const exportRes = await fetch(`${baseUrl}/api/admin/export`, { headers: { 'Authorization': `Bearer ${adminLoginData.token}` } });
   const excelBytes = (await exportRes.arrayBuffer()).byteLength;
   console.log(`[PASS] Admin Excel Workbook Export: HTTP ${exportRes.status}, Content-Type = ${exportRes.headers.get('content-type')}, File Size = ${excelBytes} bytes`);
 
@@ -96,7 +100,7 @@ async function runAutomatedTests() {
 
   const updateDomainRes = await fetch(`${baseUrl}/api/admin/domains`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    headers: adminHeaders,
     body: JSON.stringify(domainToUpdate),
   });
   const updateDomainData = await updateDomainRes.json();

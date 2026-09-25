@@ -4,6 +4,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
+import rateLimit from 'express-rate-limit';
 import { fileURLToPath } from 'url';
 import * as XLSX from 'xlsx';
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
@@ -25,6 +27,124 @@ app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// ==========================================
+// SECURITY RATE LIMITERS
+// ==========================================
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  message: { success: false, error: 'Too many authentication attempts. Please try again after 15 minutes.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+const regLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 50,
+  message: { success: false, error: 'Registration rate limit exceeded. Please try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+const utrLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 120,
+  message: { exists: false, error: 'Verification rate limit exceeded.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// ==========================================
+// SECURITY HELPERS: HASHING & SANITIZATION
+// ==========================================
+function hashPassword(password) {
+  if (!password) return '';
+  const salt = crypto.randomBytes(16).toString('hex');
+  const hash = crypto.pbkdf2Sync(password, salt, 100000, 64, 'sha512').toString('hex');
+  return `pbkdf2$${salt}$${hash}`;
+}
+
+function verifyPassword(password, stored) {
+  if (!password || !stored) return false;
+  if (!stored.startsWith('pbkdf2$')) {
+    // Legacy plaintext support for initial test teams
+    return password === stored;
+  }
+  const parts = stored.split('$');
+  if (parts.length !== 3) return false;
+  const salt = parts[1];
+  const originalHash = parts[2];
+  const hash = crypto.pbkdf2Sync(password, salt, 100000, 64, 'sha512').toString('hex');
+  try {
+    return crypto.timingSafeEqual(Buffer.from(hash, 'hex'), Buffer.from(originalHash, 'hex'));
+  } catch (e) {
+    return false;
+  }
+}
+
+function sanitizeTeam(team) {
+  if (!team) return team;
+  const safe = { ...team };
+  delete safe.teamPassword;
+  return safe;
+}
+
+// ==========================================
+// SECURITY HELPERS: ADMIN CLEARANCE TOKEN
+// ==========================================
+function generateAdminToken(secret) {
+  const timestamp = Date.now();
+  const nonce = crypto.randomBytes(12).toString('hex');
+  const payload = `shield_${timestamp}_${nonce}`;
+  const signature = crypto.createHmac('sha256', secret).update(payload).digest('hex');
+  return Buffer.from(`${payload}.${signature}`).toString('base64');
+}
+
+function verifyAdminToken(tokenString, secret) {
+  if (!tokenString) return false;
+  if (tokenString === secret) return true; // Direct secret match support
+
+  try {
+    const decoded = Buffer.from(tokenString, 'base64').toString('utf-8');
+    const [payload, signature] = decoded.split('.');
+    if (!payload || !signature) return false;
+
+    const expectedSig = crypto.createHmac('sha256', secret).update(payload).digest('hex');
+    const isValid = crypto.timingSafeEqual(Buffer.from(signature, 'hex'), Buffer.from(expectedSig, 'hex'));
+    if (!isValid) return false;
+
+    const parts = payload.split('_');
+    const timestamp = parseInt(parts[1], 10);
+    // 24 hour clearance token expiry
+    if (isNaN(timestamp) || Date.now() - timestamp > 24 * 60 * 60 * 1000) {
+      return false;
+    }
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
+function requireAdminAuth(req, res, next) {
+  const secret = process.env.ADMIN_SECRET || 'admin123';
+  const authHeader = req.headers.authorization;
+  let token = null;
+
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    token = authHeader.substring(7).trim();
+  } else if (req.query && req.query.token) {
+    token = req.query.token.toString().trim();
+  }
+
+  if (!token || !verifyAdminToken(token, secret)) {
+    return res.status(401).json({
+      success: false,
+      error: 'Access Denied: S.H.I.E.L.D. Level 10 Clearance authorization required.'
+    });
+  }
+  next();
+}
 
 // ==========================================
 // CLOUDFLARE R2 CONFIGURATION
@@ -379,10 +499,13 @@ const upload = multer({
   storage,
   limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
   fileFilter: (req, file, cb) => {
-    if (file.mimetype.startsWith('image/')) {
+    const allowedExts = ['.png', '.jpg', '.jpeg', '.webp'];
+    const ext = path.extname(file.originalname).toLowerCase();
+    const allowedMimes = ['image/png', 'image/jpeg', 'image/jpg', 'image/webp'];
+    if (allowedMimes.includes(file.mimetype) && allowedExts.includes(ext)) {
       cb(null, true);
     } else {
-      cb(new Error('Only image files (PNG, JPG, JPEG, WEBP) are allowed.'));
+      cb(new Error('Only safe image files (PNG, JPG, JPEG, WEBP) are allowed.'));
     }
   },
 });
@@ -429,7 +552,7 @@ app.get('/api/domains', async (req, res) => {
 });
 
 // 2. Real-time UTR Uniqueness Verification
-app.get('/api/verify-utr', async (req, res) => {
+app.get('/api/verify-utr', utrLimiter, async (req, res) => {
   try {
     const utr = (req.query.utr || '').toString().trim();
     if (!utr) return res.json({ exists: false });
@@ -443,7 +566,7 @@ app.get('/api/verify-utr', async (req, res) => {
 });
 
 // 3. Squad Registration Endpoint
-app.post('/api/register', upload.single('paymentScreenshot'), async (req, res) => {
+app.post('/api/register', regLimiter, upload.single('paymentScreenshot'), async (req, res) => {
   try {
     const {
       teamName,
@@ -502,7 +625,7 @@ app.post('/api/register', upload.single('paymentScreenshot'), async (req, res) =
       return res.status(400).json({ success: false, error: 'Squad size must be strictly 3 or 4 members.' });
     }
 
-    // Construct squad record
+    // Construct squad record with secure password hash
     const teamId = `INF-${Math.floor(1000 + Math.random() * 9000)}`;
     const newTeam = {
       id: teamId,
@@ -510,7 +633,7 @@ app.post('/api/register', upload.single('paymentScreenshot'), async (req, res) =
       college: college.trim(),
       preferredDomain,
       teamSize: parsedSize,
-      teamPassword,
+      teamPassword: hashPassword(teamPassword),
       leader: {
         name: leaderName.trim(),
         email: leaderEmail.trim().toLowerCase(),
@@ -537,7 +660,7 @@ app.post('/api/register', upload.single('paymentScreenshot'), async (req, res) =
     res.json({
       success: true,
       message: 'Registration successful! May the Infinity Stones guide your squad.',
-      team: newTeam,
+      team: sanitizeTeam(newTeam),
     });
   } catch (err) {
     console.error('Registration error:', err);
@@ -546,7 +669,7 @@ app.post('/api/register', upload.single('paymentScreenshot'), async (req, res) =
 });
 
 // 4. Leader Portal Login
-app.post('/api/teams/login', async (req, res) => {
+app.post('/api/teams/login', authLimiter, async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -559,12 +682,12 @@ app.post('/api/teams/login', async (req, res) => {
     if (!team) {
       return res.status(404).json({ success: false, error: 'No squad registered with this leader email.' });
     }
-    if (team.teamPassword !== password) {
+    if (!verifyPassword(password, team.teamPassword)) {
       return res.status(401).json({ success: false, error: 'Incorrect team password.' });
     }
 
     const assignedDomain = db.domains.find((d) => d.id === team.preferredDomain) || db.domains[0];
-    res.json({ success: true, team, domainInfo: assignedDomain });
+    res.json({ success: true, team: sanitizeTeam(team), domainInfo: assignedDomain });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
@@ -582,7 +705,7 @@ app.post('/api/teams/update-selection', async (req, res) => {
     const cleanEmail = email.trim().toLowerCase();
     const team = db.teams.find((t) => t.leader.email.trim().toLowerCase() === cleanEmail);
 
-    if (!team || team.teamPassword !== password) {
+    if (!team || !verifyPassword(password, team.teamPassword)) {
       return res.status(401).json({ success: false, error: 'Authentication failed.' });
     }
 
@@ -611,14 +734,14 @@ app.post('/api/teams/update-selection', async (req, res) => {
     }
 
     await saveDb(db);
-    res.json({ success: true, team, domainInfo: currentDomain });
+    res.json({ success: true, team: sanitizeTeam(team), domainInfo: currentDomain });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
-// 6. Admin Authentication (Robust JSON Response)
-app.post('/api/admin/login', (req, res) => {
+// 6. Admin Authentication (Robust Clearance Token Response)
+app.post('/api/admin/login', authLimiter, (req, res) => {
   try {
     const { password } = req.body || {};
     const secret = process.env.ADMIN_SECRET || 'admin123';
@@ -627,7 +750,7 @@ app.post('/api/admin/login', (req, res) => {
       return res.status(400).json({ success: false, error: 'Passphrase is required.' });
     }
     if (password === secret) {
-      const token = Buffer.from(`admin_clearance_${Date.now()}`).toString('base64');
+      const token = generateAdminToken(secret);
       return res.status(200).json({ success: true, token, message: 'Organizer clearance granted.' });
     }
     return res.status(401).json({ success: false, error: 'Invalid admin passphrase.' });
@@ -637,17 +760,18 @@ app.post('/api/admin/login', (req, res) => {
 });
 
 // 7. Admin Get All Teams
-app.get('/api/admin/teams', async (req, res) => {
+app.get('/api/admin/teams', requireAdminAuth, async (req, res) => {
   try {
     const db = await loadDb();
-    res.json({ success: true, teams: db.teams });
+    const sanitized = db.teams.map((t) => sanitizeTeam(t));
+    res.json({ success: true, teams: sanitized });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
 // 8. Admin Edit ANYTHING of Team Details
-app.put('/api/admin/teams/:id', async (req, res) => {
+app.put('/api/admin/teams/:id', requireAdminAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const updates = req.body;
@@ -660,13 +784,20 @@ app.put('/api/admin/teams/:id', async (req, res) => {
 
     // Merge updates deeply
     const existing = db.teams[idx];
+    let updatedPassword = existing.teamPassword;
+    if (updates.teamPassword !== undefined && updates.teamPassword !== '') {
+      updatedPassword = updates.teamPassword.startsWith('pbkdf2$')
+        ? updates.teamPassword
+        : hashPassword(updates.teamPassword);
+    }
+
     db.teams[idx] = {
       ...existing,
       teamName: updates.teamName !== undefined ? updates.teamName : existing.teamName,
       college: updates.college !== undefined ? updates.college : existing.college,
       preferredDomain: updates.preferredDomain !== undefined ? updates.preferredDomain : existing.preferredDomain,
       teamSize: updates.teamSize !== undefined ? updates.teamSize : existing.teamSize,
-      teamPassword: updates.teamPassword !== undefined ? updates.teamPassword : existing.teamPassword,
+      teamPassword: updatedPassword,
       roomAllocated: updates.roomAllocated !== undefined ? updates.roomAllocated : (existing.roomAllocated || 'Unassigned'),
       selectedProblemStatement: updates.selectedProblemStatement !== undefined ? updates.selectedProblemStatement : existing.selectedProblemStatement,
       leader: {
@@ -681,14 +812,14 @@ app.put('/api/admin/teams/:id', async (req, res) => {
     };
 
     await saveDb(db);
-    res.json({ success: true, team: db.teams[idx] });
+    res.json({ success: true, team: sanitizeTeam(db.teams[idx]) });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
 // Backward-compatible patch route
-app.patch('/api/admin/teams', async (req, res) => {
+app.patch('/api/admin/teams', requireAdminAuth, async (req, res) => {
   try {
     const { id, updates } = req.body;
     const db = await loadDb();
@@ -701,14 +832,14 @@ app.patch('/api/admin/teams', async (req, res) => {
       payment: { ...db.teams[idx].payment, ...(updates.payment || {}) }
     };
     await saveDb(db);
-    res.json({ success: true, team: db.teams[idx] });
+    res.json({ success: true, team: sanitizeTeam(db.teams[idx]) });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
 // 9. Admin Delete Squad
-app.delete('/api/admin/teams/:id', async (req, res) => {
+app.delete('/api/admin/teams/:id', requireAdminAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const db = await loadDb();
@@ -725,7 +856,7 @@ app.delete('/api/admin/teams/:id', async (req, res) => {
 });
 
 // Also support query param for delete
-app.delete('/api/admin/teams', async (req, res) => {
+app.delete('/api/admin/teams', requireAdminAuth, async (req, res) => {
   try {
     const id = req.query.id;
     const db = await loadDb();
@@ -742,7 +873,7 @@ app.delete('/api/admin/teams', async (req, res) => {
 });
 
 // 10. Admin Update Domains & Problem Statements
-app.put('/api/admin/domains', async (req, res) => {
+app.put('/api/admin/domains', requireAdminAuth, async (req, res) => {
   try {
     const updatedDomain = req.body;
     const db = await loadDb();
@@ -759,7 +890,7 @@ app.put('/api/admin/domains', async (req, res) => {
 });
 
 // 11. Admin Multi-Sheet Excel Export (.xlsx)
-app.get('/api/admin/export', async (req, res) => {
+app.get('/api/admin/export', requireAdminAuth, async (req, res) => {
   try {
     const db = await loadDb();
     const teams = db.teams;

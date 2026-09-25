@@ -492,6 +492,7 @@ function initAdmin() {
       const data = await res.json();
       if (!res.ok || !data.success) throw new Error(data.error || 'Invalid passphrase');
 
+      sessionStorage.setItem('shield_auth', data.token || 'authenticated');
       document.getElementById('admin-login-view').style.display = 'none';
       document.getElementById('admin-dashboard-view').style.display = 'block';
       loadAdminData();
@@ -508,13 +509,19 @@ function initAdmin() {
 
   // Excel Download
   document.getElementById('admin-export-btn')?.addEventListener('click', () => {
-    window.location.href = '/api/admin/export';
+    const token = sessionStorage.getItem('shield_auth') || '';
+    window.location.href = `/api/admin/export?token=${encodeURIComponent(token)}`;
   });
+}
+
+function getAppAdminAuthHeader() {
+  const token = sessionStorage.getItem('shield_auth') || '';
+  return { 'Authorization': `Bearer ${token}` };
 }
 
 async function loadAdminData() {
   try {
-    const res = await fetch('/api/admin/teams');
+    const res = await fetch('/api/admin/teams', { headers: getAppAdminAuthHeader() });
     const data = await res.json();
     if (data.success) {
       allTeams = data.teams;
@@ -582,7 +589,7 @@ async function updatePaymentStatus(teamId, status) {
   try {
     const res = await fetch('/api/admin/teams', {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...getAppAdminAuthHeader() },
       body: JSON.stringify({ id: teamId, updates: { payment: { status } } }),
     });
     const data = await res.json();
@@ -598,7 +605,10 @@ async function updatePaymentStatus(teamId, status) {
 async function deleteSquad(teamId, teamName) {
   if (!confirm(`Delete squad "${teamName}" (${teamId})?`)) return;
   try {
-    const res = await fetch(`/api/admin/teams?id=${teamId}`, { method: 'DELETE' });
+    const res = await fetch(`/api/admin/teams?id=${teamId}`, {
+      method: 'DELETE',
+      headers: getAppAdminAuthHeader()
+    });
     const data = await res.json();
     if (data.success) {
       allTeams = allTeams.filter(t => t.id !== teamId);
@@ -636,7 +646,7 @@ async function togglePsRelease(domainId) {
   try {
     const res = await fetch('/api/admin/domains', {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...getAppAdminAuthHeader() },
       body: JSON.stringify(domain),
     });
     const data = await res.json();

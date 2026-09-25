@@ -74,9 +74,13 @@ async function runAllTests() {
   console.log(`[PASS] Team Domain Switch & PS Selection: New Domain = "${selectData.team?.preferredDomain}", Selected PS = "${selectData.team?.selectedProblemStatement?.code} - ${selectData.team?.selectedProblemStatement?.title}"`);
 
   // Test 7: Admin Edits Squad Details & Assigns Room
+  const adminHeaders = {
+    'Authorization': `Bearer ${adminLoginData.token}`,
+    'Content-Type': 'application/json',
+  };
   const adminEditRes = await fetch(`${baseUrl}/api/admin/teams/${registeredTeamId}`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    headers: adminHeaders,
     body: JSON.stringify({
       teamName: 'Quantum Avengers (Promoted)',
       roomAllocated: 'Stark Tower Lab 402',
@@ -96,7 +100,9 @@ async function runAllTests() {
   console.log(`[PASS] Leader Dashboard Refresh: Room = "${refreshedData.team?.roomAllocated}", Verified = "${refreshedData.team?.payment?.status}"`);
 
   // Test 9: Admin Multi-Sheet Excel Export
-  const exportRes = await fetch(`${baseUrl}/api/admin/export`);
+  const exportRes = await fetch(`${baseUrl}/api/admin/export`, {
+    headers: { 'Authorization': `Bearer ${adminLoginData.token}` },
+  });
   const excelBuffer = await exportRes.arrayBuffer();
   console.log(`[PASS] Multi-Sheet Excel (.xlsx) Export: HTTP ${exportRes.status}, Content-Type = ${exportRes.headers.get('content-type')}, File Size = ${excelBuffer.byteLength} bytes`);
 
@@ -108,7 +114,7 @@ async function runAllTests() {
 
   const updateDomainRes = await fetch(`${baseUrl}/api/admin/domains`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    headers: adminHeaders,
     body: JSON.stringify(timeDomain),
   });
   const updateDomainData = await updateDomainRes.json();

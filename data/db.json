@@ -3059,6 +3059,86 @@
       },
       "createdAt": "2026-09-25T06:30:06.957Z",
       "status": "confirmed"
+    },
+    {
+      "id": "INF-6284",
+      "teamName": "Quantum Avengers (Promoted)",
+      "college": "Stark Institute of Technology",
+      "preferredDomain": "analytics",
+      "teamSize": 3,
+      "teamPassword": "pbkdf2$059353359a0ec930ae53c1acbe87abd9$d1449e1ddf7293a72c2d822c7a545edb22e8747d30bbaf9ae244b89128762470767576f02b41ddec9a7b6c9ab8708be98237b0bcd057cd7da45942d17268c091",
+      "leader": {
+        "name": "Peter Parker",
+        "email": "avenger_1790322106713@stark.com",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Ned Leeds",
+          "email": "ned@stark.com",
+          "phone": "9876543211"
+        },
+        {
+          "name": "MJ Watson",
+          "email": "mj@stark.com",
+          "phone": "9876543212"
+        }
+      ],
+      "roomAllocated": "Stark Tower Lab 402",
+      "selectedProblemStatement": {
+        "id": "ps-ana-01",
+        "code": "PS-ANA-01",
+        "title": "Sub-Millisecond Streaming Prediction & Algorithmic Optimization Pipeline",
+        "category": "Data & Prediction",
+        "selectedAt": "2026-09-25T07:41:47.162Z"
+      },
+      "payment": {
+        "utr": "988764267024",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T07:41:46.885Z",
+        "amount": 300,
+        "status": "verified"
+      },
+      "createdAt": "2026-09-25T07:41:46.885Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-1234",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "pbkdf2$c2348afab2f4e4f116c3af006ff00c14$9347cd8680953fa05780aced8ed2f66409b5f7661e560ba454e53339b921f389a2024603ed1a7bddce1087ffc18c6e0655c6926f5cd87ff2019640c87113e6f0",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790322220006@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "988360143727",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T07:43:40.101Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T07:43:40.101Z",
+      "status": "confirmed"
     }
   ]
 }
