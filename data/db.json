@@ -2837,6 +2837,228 @@
       },
       "createdAt": "2026-09-25T05:46:39.887Z",
       "status": "confirmed"
+    },
+    {
+      "id": "INF-1645",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790316221099@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "981698945170",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T06:03:41.141Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T06:03:41.141Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6263",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790316432657@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "985603231702",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T06:07:12.704Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T06:07:12.704Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-2871",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790316708659@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "984336207651",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T06:11:48.733Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T06:11:48.734Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3966",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790317288977@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "983589373175",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T06:21:29.057Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T06:21:29.058Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-6135",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790317560700@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "988839275371",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T06:26:00.860Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T06:26:00.860Z",
+      "status": "confirmed"
+    },
+    {
+      "id": "INF-3553",
+      "teamName": "Asgardian Hackers",
+      "college": "Asgard Realm of Tech",
+      "preferredDomain": "intelligence",
+      "teamSize": 3,
+      "teamPassword": "thorpassword",
+      "leader": {
+        "name": "Thor Odinson",
+        "email": "thor_1790317806904@asgard.gov",
+        "phone": "9876543210"
+      },
+      "members": [
+        {
+          "name": "Loki Laufeyson",
+          "email": "loki@asgard.gov",
+          "phone": "9876543219"
+        },
+        {
+          "name": "Valkyrie",
+          "email": "valkyrie@asgard.gov",
+          "phone": "9876543220"
+        }
+      ],
+      "roomAllocated": "TBA (Released with Problem Statements)",
+      "selectedProblemStatement": null,
+      "payment": {
+        "utr": "989526658844",
+        "phone": "9876543210",
+        "screenshotUrl": "/placeholder-receipt.png",
+        "submittedAt": "2026-09-25T06:30:06.957Z",
+        "amount": 300,
+        "status": "pending"
+      },
+      "createdAt": "2026-09-25T06:30:06.957Z",
+      "status": "confirmed"
     }
   ]
 }
