@@ -205,12 +205,27 @@
       position: relative;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
     }
+
+    /* NEO-BRUTALIST STICKER OVERLAYS */
+    .neo-sticker {
+      position: absolute;
+      z-index: 35;
+      pointer-events: auto;
+      user-select: none;
+      filter: drop-shadow(8px 8px 0px #000000);
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .neo-sticker img { display: block; width: 100%; height: auto; pointer-events: none; }
+    .neo-sticker:hover { transform: scale(1.18) rotate(0deg) !important; z-index: 150 !important; }
   </style>
 </head>
 <body>
 
   <!-- Top Navigation Header -->
-  <header class="header-bar">
+  <header class="header-bar" style="position: relative;">
+    <div class="neo-sticker" style="top: -15px; left: 420px; width: 150px; transform: rotate(-10deg);">
+      <img src="sticker/TL.png" alt="TVA Stamp Sticker">
+    </div>
     <div style="display: flex; align-items: center; gap: 12px;">
       <div style="width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; background: #e62429; color: #fff; font-weight: 800; font-size: 0.8rem;">
         M
@@ -238,8 +253,14 @@
   <!-- ======================================================= -->
   <!-- 1. PASSKEY LOGIN VIEW                                   -->
   <!-- ======================================================= -->
-  <div id="admin-login-view" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; padding: 20px;">
-    <div class="obsidian-card" style="width: 100%; max-width: 420px; text-align: center;">
+  <div id="admin-login-view" style="display: flex; align-items: center; justify-content: center; min-height: 80vh; padding: 20px; position: relative;">
+    <div class="neo-sticker" style="top: 40px; left: 120px; width: 170px; transform: rotate(-15deg);">
+      <img src="sticker/DU.png" alt="Doctor Doom Arm Sticker">
+    </div>
+    <div class="obsidian-card" style="width: 100%; max-width: 420px; text-align: center; position: relative;">
+      <div class="neo-sticker" style="top: -45px; right: -45px; width: 160px; transform: rotate(14deg);">
+        <img src="sticker/CS.png" alt="Comic Stamp Sticker">
+      </div>
       <div style="font-size: 2rem; margin-bottom: 10px; color: var(--gold);">🔐</div>
       <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 4px;">ORGANIZER CLEARANCE</h2>
       <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 22px;">Enter your secret passphrase to decrypt the command console.</p>

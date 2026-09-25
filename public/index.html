@@ -83,6 +83,9 @@
     html {
       scroll-behavior: smooth;
       background-color: var(--bg);
+      overflow-x: hidden !important;
+      width: 100vw;
+      max-width: 100%;
     }
 
     body {
@@ -90,12 +93,23 @@
       color: var(--black);
       font-family: var(--font-body);
       cursor: url('assets/gauntlet-cursor.svg') 12 12, auto;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
+      width: 100%;
+      position: relative;
       line-height: 1.45;
       background-image:
         linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
       background-size: 32px 32px;
+    }
+
+    .hero-section,
+    .section-wrap,
+    .countdown-section,
+    .stats-strip,
+    .footer-section {
+      overflow: visible !important;
+      position: relative;
     }
 
     a,
@@ -402,7 +416,6 @@
     .hero-section {
       padding: 70px 0 90px 0;
       position: relative;
-      overflow: hidden;
       border-bottom: var(--border-thick);
     }
 
@@ -2008,6 +2021,104 @@
         height: 160px;
       }
     }
+
+    /* ======================================================= */
+    /* NEO-BRUTALIST EDGE & WHITESPACE STICKER SYSTEM          */
+    /* ======================================================= */
+    .neo-sticker {
+      position: absolute;
+      z-index: 15;
+      pointer-events: auto;
+      user-select: none;
+      filter: drop-shadow(5px 5px 0px #000000) drop-shadow(1px 1px 0px #000000);
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+      cursor: pointer;
+    }
+
+    .neo-sticker img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    /* Crisp Edge-Fit Size Utilities */
+    .sticker-sm { width: 85px !important; }
+    .sticker-md { width: 105px !important; }
+    .sticker-lg { width: 130px !important; }
+    .sticker-xl { width: 155px !important; }
+
+    .neo-sticker:hover {
+      transform: scale(1.18) rotate(0deg) translateY(-5px) !important;
+      filter: drop-shadow(9px 9px 0px #000000) drop-shadow(2px 2px 0px #000000);
+      z-index: 99 !important;
+    }
+
+    .neo-sticker:active {
+      transform: scale(1.05) translateY(2px) !important;
+      filter: drop-shadow(3px 3px 0px #000000);
+    }
+
+    .sticker-tape-yellow::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -10px;
+      width: 42px;
+      height: 16px;
+      background: rgba(255, 230, 0, 0.92);
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      transform: rotate(-22deg);
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .sticker-tape-white::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      right: -8px;
+      width: 42px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      transform: rotate(18deg);
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .sticker-tape-red::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      width: 40px;
+      height: 15px;
+      background: rgba(255, 0, 85, 0.9);
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+      transform: rotate(15deg);
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    @keyframes stickerWiggle {
+      0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+      50% { transform: translateY(-5px) rotate(calc(var(--rot, 0deg) + 2deg)); }
+    }
+
+    .sticker-pulse {
+      animation: stickerWiggle 4s ease-in-out infinite;
+    }
+
+    @media (max-width: 1200px) {
+      .neo-sticker.hide-mobile {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -2083,7 +2194,19 @@
       <div class="hero-grid">
 
         <!-- Left: Hero Headline & Punchy Messaging -->
-        <div>
+        <div style="position: relative;">
+          <!-- Neo-Brutalist Outer Margin Stickers (Text-Safe & Viewport-Safe) -->
+          <div class="neo-sticker sticker-tape-yellow sticker-pulse hide-mobile sticker-md" style="top: -45px; left: -45px; transform: rotate(-15deg);">
+            <img src="sticker/SP!.png" alt="Spider-Man Action Sticker">
+          </div>
+          <div class="neo-sticker sticker-tape-white hide-mobile sticker-lg" style="top: -45px; right: -45px; transform: rotate(14deg);">
+            <img src="sticker/CAA.png" alt="Captain America Sticker">
+          </div>
+          <!-- Infinity Gauntlet relocated to top empty space above title & stack -->
+          <div class="neo-sticker sticker-tape-red hide-mobile sticker-lg" style="top: -55px; left: 45%; transform: rotate(-8deg); z-index: 20;">
+            <img src="sticker/IG.png" alt="Infinity Gauntlet Sticker">
+          </div>
+
           <div class="hero-badge-strip">
             <span class="stamp-badge btn-yellow badge-rot-left">★ 24-HOUR ENGINEERING MARATHON ★</span>
             <span class="stamp-badge btn-cyan badge-rot-right">S.H.I.E.L.D. AUTHORIZED</span>
@@ -2102,7 +2225,7 @@
             unbreakable architecture, and claim ₹50,000 before the inevitable Snap.
           </p>
 
-          <div class="hero-cta-group">
+          <div class="hero-cta-group" style="position: relative;">
             <button class="btn-brutal btn-yellow btn-lg" onclick="openRegisterForStone('intelligence')">
               <span>WIELD A STONE [REGISTER] →</span>
             </button>
@@ -2113,7 +2236,7 @@
 
           <!-- Quick Micro Stats -->
           <div
-            style="display: flex; gap: 14px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800;">
+            style="display: flex; gap: 14px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 800; align-items: center; position: relative; margin-top: 20px;">
             <div class="hero-micro-stat cursor-target"
               style="background: var(--white); border: 2px solid var(--black); padding: 6px 12px; box-shadow: 3px 3px 0 #000;">
               ⚡ SQUAD: 3 TO 4 HACKERS
@@ -2126,13 +2249,27 @@
               style="background: var(--white); border: 2px solid var(--black); padding: 6px 12px; box-shadow: 3px 3px 0 #000;">
               🛡️ 1 SQUAD = 1 CHALLENGE
             </div>
+            <div class="neo-sticker hide-mobile sticker-md" style="bottom: -45px; left: -35px; transform: rotate(-10deg);">
+              <img src="sticker/AR.png" alt="Stark Arc Reactor Sticker">
+            </div>
+            <div class="neo-sticker hide-mobile sticker-md" style="bottom: -45px; right: -35px; transform: rotate(-12deg);">
+              <img src="sticker/ST.png" alt="Stark Tech Stamp">
+            </div>
           </div>
         </div>
 
         <!-- Right: Neo-Brutalist Monolith with Stone Cutout Overflow -->
         <!-- Right: Neo-Brutalist Stack File of 6 Stones Auto Rolling -->
         <div class="hero-art-container" id="hero-stack-container" onmouseenter="pauseHeroRoll()"
-          onmouseleave="resumeHeroRoll()">
+          onmouseleave="resumeHeroRoll()" style="position: relative;">
+
+          <!-- Neo-Brutalist Outer Monolith Stickers -->
+          <div class="neo-sticker sticker-tape-red hide-mobile sticker-lg" style="top: -45px; right: -40px; transform: rotate(15deg);">
+            <img src="sticker/IM@.png" alt="Iron Man HUD Sticker">
+          </div>
+          <div class="neo-sticker hide-mobile sticker-md" style="top: -45px; left: -35px; transform: rotate(-12deg);">
+            <img src="sticker/VI.png" alt="Vision Mind Stone Sticker">
+          </div>
 
           <!-- Stack File Underlay 3 (Deepest File Card) -->
           <div class="hero-stack-underlay hero-stack-card-3">
@@ -2214,7 +2351,13 @@
   <!-- ======================================================= -->
   <!-- 2. COUNTDOWN TIMER (STAMPED BATTLE CLOCK)               -->
   <!-- ======================================================= -->
-  <section class="countdown-section">
+  <section class="countdown-section" style="position: relative;">
+    <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -25px; left: -35px; transform: rotate(-14deg);">
+      <img src="sticker/TH.png" alt="Thanos Titan Badge Sticker">
+    </div>
+    <div class="neo-sticker hide-mobile sticker-xl" style="bottom: -30px; right: -45px; transform: rotate(12deg);">
+      <img src="sticker/TL.png" alt="TVA Sacred Timeline Sticker">
+    </div>
     <div class="container countdown-bar-inner">
       <div class="countdown-title-wrap">
         <div
@@ -2250,7 +2393,10 @@
   <!-- ======================================================= -->
   <!-- STATS TILES                                             -->
   <!-- ======================================================= -->
-  <div class="stats-strip">
+  <div class="stats-strip" style="position: relative;">
+    <div class="neo-sticker hide-mobile sticker-lg" style="top: -25px; right: -40px; transform: rotate(-8deg);">
+      <img src="sticker/CS3.png" alt="Comic Stamp Sticker">
+    </div>
     <div class="stat-tile">
       <div class="stat-number">₹50,000</div>
       <div class="stat-caption">TOTAL COMBAT BOUNTY POOL</div>
@@ -2272,10 +2418,16 @@
   <!-- ======================================================= -->
   <!-- 3. THE 6 INFINITY STONES POWER CARDS                    -->
   <!-- ======================================================= -->
-  <section id="stones" class="section-wrap">
+  <section id="stones" class="section-wrap" style="position: relative;">
+    <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -30px; left: -35px; transform: rotate(-15deg);">
+      <img src="sticker/VI.png" alt="Vision Mind Stone Sticker">
+    </div>
+    <div class="neo-sticker sticker-tape-white hide-mobile sticker-xl" style="top: -30px; right: -45px; transform: rotate(18deg);">
+      <img src="sticker/TG.png" alt="Thor Mjolnir Sticker">
+    </div>
     <div class="container">
 
-      <div class="section-header">
+      <div class="section-header" style="position: relative;">
         <span class="section-kicker">01 // PRIMORDIAL DOMAINS</span>
         <h2 class="section-heading">SIX STONES. CHOOSE YOUR WEAPON.</h2>
         <p class="section-subtext">
@@ -2285,7 +2437,7 @@
       </div>
 
       <!-- Dynamic Cards Container -->
-      <div class="stones-grid" id="domains-grid">
+      <div class="stones-grid" id="domains-grid" style="position: relative;">
         <!-- Rendered via JavaScript loadDomains() with User VFX Cutouts -->
       </div>
 
@@ -2295,10 +2447,16 @@
   <!-- ======================================================= -->
   <!-- 4. BATTLE PLAN (SCHEDULE TIMELINE)                      -->
   <!-- ======================================================= -->
-  <section id="battle-plan" class="section-wrap section-dark">
+  <section id="battle-plan" class="section-wrap section-dark" style="position: relative;">
+    <div class="neo-sticker hide-mobile sticker-lg" style="bottom: -20px; left: -35px; transform: rotate(12deg); opacity: 0.95;">
+      <img src="sticker/IG.png" alt="Infinity Gauntlet Sticker">
+    </div>
     <div class="container">
 
-      <div class="section-header">
+      <div class="section-header" style="position: relative;">
+        <div class="neo-sticker sticker-tape-red hide-mobile sticker-lg" style="top: -25px; right: -35px; transform: rotate(18deg);">
+          <img src="sticker/TL.png" alt="TVA Sacred Timeline Stamp">
+        </div>
         <span class="section-kicker">02 // STRATEGIC DIRECTIVE</span>
         <h2 class="section-heading" style="color: var(--white);">THE 24-HOUR BATTLE PLAN</h2>
         <p class="section-subtext" style="color: #A3A3A3;">
@@ -2310,7 +2468,10 @@
       <div class="battle-plan-grid">
 
         <!-- Phase 1 -->
-        <div class="plan-card">
+        <div class="plan-card" style="position: relative;">
+          <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-md" style="top: -20px; left: -25px; transform: rotate(-14deg);">
+            <img src="sticker/CS.png" alt="Comic Stamp Sticker">
+          </div>
           <div class="plan-header" style="background: var(--stone-mind); color: var(--black);">
             <span>PHASE 01</span>
             <span>T-00:00 NOW</span>
@@ -2330,7 +2491,10 @@
         </div>
 
         <!-- Phase 2 -->
-        <div class="plan-card">
+        <div class="plan-card" style="position: relative;">
+          <div class="neo-sticker hide-mobile sticker-lg" style="top: -25px; right: -35px; transform: rotate(12deg);">
+            <img src="sticker/DR.png" alt="Doctor Strange Eye Sticker">
+          </div>
           <div class="plan-header" style="background: var(--stone-space); color: var(--black);">
             <span>PHASE 02</span>
             <span>T-48:00 HOURS</span>
@@ -2350,7 +2514,10 @@
         </div>
 
         <!-- Phase 3 -->
-        <div class="plan-card">
+        <div class="plan-card" style="position: relative;">
+          <div class="neo-sticker sticker-tape-white hide-mobile sticker-lg" style="top: -25px; right: -35px; transform: rotate(-10deg);">
+            <img src="sticker/IM4.png" alt="Iron Man Armor Tech Sticker">
+          </div>
           <div class="plan-header" style="background: var(--stone-reality); color: var(--white);">
             <span>PHASE 03</span>
             <span>T+00:00 SPRINT</span>
@@ -2370,7 +2537,10 @@
         </div>
 
         <!-- Phase 4 -->
-        <div class="plan-card">
+        <div class="plan-card" style="position: relative;">
+          <div class="neo-sticker hide-mobile sticker-md" style="bottom: -20px; right: -30px; transform: rotate(15deg);">
+            <img src="sticker/DU.png" alt="Doctor Doom Arm Sticker">
+          </div>
           <div class="plan-header" style="background: var(--stone-time); color: var(--black);">
             <span>PHASE 04</span>
             <span>T+24:00 ENDGAME</span>
@@ -2397,7 +2567,10 @@
   <!-- ======================================================= -->
   <!-- 5. BOUNTIES & PRIZES (PROPAGANDA POSTERS)               -->
   <!-- ======================================================= -->
-  <section id="bounties" class="section-wrap">
+  <section id="bounties" class="section-wrap" style="position: relative;">
+    <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -30px; left: -45px; transform: rotate(-14deg);">
+      <img src="sticker/CS3.png" alt="Comic Stamp Sticker">
+    </div>
     <div class="container">
 
       <div class="section-header">
@@ -2412,7 +2585,10 @@
       <div class="bounties-grid">
 
         <!-- Poster 1: Grand Titan -->
-        <div class="wanted-poster wanted-rot-left">
+        <div class="wanted-poster wanted-rot-left" style="position: relative;">
+          <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -30px; left: -40px; transform: rotate(-15deg);">
+            <img src="sticker/DU.png" alt="Doctor Doom Seal Sticker">
+          </div>
           <div class="wanted-badge-header">
             WANTED: TITAN
           </div>
@@ -2430,7 +2606,10 @@
         </div>
 
         <!-- Poster 2: First Runner Up -->
-        <div class="wanted-poster wanted-rot-right">
+        <div class="wanted-poster wanted-rot-right" style="position: relative;">
+          <div class="neo-sticker sticker-tape-white hide-mobile sticker-lg" style="top: -30px; right: -40px; transform: rotate(14deg);">
+            <img src="sticker/CAA.png" alt="Captain America Sticker">
+          </div>
           <div class="wanted-badge-header" style="font-size: 2.2rem;">
             FIRST RUNNER UP
           </div>
@@ -2448,7 +2627,10 @@
         </div>
 
         <!-- Poster 3: Hardcore Audacity Bounty -->
-        <div class="wanted-poster">
+        <div class="wanted-poster" style="position: relative;">
+          <div class="neo-sticker sticker-tape-red hide-mobile sticker-md" style="bottom: -25px; right: -35px; transform: rotate(-10deg);">
+            <img src="sticker/CS1.png" alt="Marvel Stamp Sticker">
+          </div>
           <div class="wanted-badge-header" style="font-size: 2.2rem;">
             AUDACITY PRIZE
           </div>
@@ -2473,7 +2655,10 @@
   <!-- ======================================================= -->
   <!-- 6. PROTOCOL & RULES OF ENGAGEMENT                       -->
   <!-- ======================================================= -->
-  <section id="rules" class="section-wrap section-dark">
+  <section id="rules" class="section-wrap section-dark" style="position: relative;">
+    <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -30px; right: -45px; transform: rotate(-15deg); opacity: 0.95;">
+      <img src="sticker/AR.png" alt="Arc Reactor Sticker">
+    </div>
     <div class="container">
 
       <div class="section-header">
@@ -2486,7 +2671,10 @@
 
       <div class="rules-grid">
 
-        <div class="rule-box">
+        <div class="rule-box" style="position: relative;">
+          <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-md" style="top: -20px; left: -30px; transform: rotate(-12deg);">
+            <img src="sticker/CS.png" alt="Comic Badge Sticker">
+          </div>
           <div class="rule-number">01</div>
           <h3 class="rule-heading">FRESH CODE ONLY</h3>
           <p class="rule-desc">
@@ -2495,7 +2683,10 @@
           </p>
         </div>
 
-        <div class="rule-box">
+        <div class="rule-box" style="position: relative;">
+          <div class="neo-sticker hide-mobile sticker-md" style="top: -20px; right: -30px; transform: rotate(14deg);">
+            <img src="sticker/IM!.png" alt="Iron Man Badge Sticker">
+          </div>
           <div class="rule-number">02</div>
           <h3 class="rule-heading">SQUAD INTEGRITY</h3>
           <p class="rule-desc">
@@ -2504,7 +2695,10 @@
           </p>
         </div>
 
-        <div class="rule-box">
+        <div class="rule-box" style="position: relative;">
+          <div class="neo-sticker sticker-tape-white hide-mobile sticker-md" style="bottom: -20px; left: -30px; transform: rotate(-10deg);">
+            <img src="sticker/TG.png" alt="Thor Mjolnir Sticker">
+          </div>
           <div class="rule-number">03</div>
           <h3 class="rule-heading">HARD PS LOCK-IN</h3>
           <p class="rule-desc">
@@ -2513,7 +2707,10 @@
           </p>
         </div>
 
-        <div class="rule-box">
+        <div class="rule-box" style="position: relative;">
+          <div class="neo-sticker hide-mobile sticker-md" style="bottom: -20px; right: -30px; transform: rotate(12deg);">
+            <img src="sticker/TL.png" alt="TVA Stamp Sticker">
+          </div>
           <div class="rule-number">04</div>
           <h3 class="rule-heading">VERIFIED PROOF</h3>
           <p class="rule-desc">
@@ -2530,10 +2727,16 @@
   <!-- ======================================================= -->
   <!-- 7. FAQ ACCORDION                                        -->
   <!-- ======================================================= -->
-  <section id="faq" class="section-wrap">
+  <section id="faq" class="section-wrap" style="position: relative;">
     <div class="container">
 
-      <div class="section-header" style="text-align: center; max-width: 720px; margin: 0 auto 50px auto;">
+      <div class="section-header" style="text-align: center; max-width: 720px; margin: 0 auto 50px auto; position: relative;">
+        <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -30px; left: -45px; transform: rotate(-16deg);">
+          <img src="sticker/SP!.png" alt="Spider-Man Action Sticker">
+        </div>
+        <div class="neo-sticker sticker-tape-red hide-mobile sticker-lg" style="bottom: -25px; right: -45px; transform: rotate(18deg);">
+          <img src="sticker/SP.png" alt="Spider-Man Mask Sticker">
+        </div>
         <span class="section-kicker">05 // INTEL DIRECTORY</span>
         <h2 class="section-heading">FREQUENTLY ASKED QUESTIONS</h2>
         <p class="section-subtext" style="margin: 12px auto 0 auto;">
@@ -2606,10 +2809,16 @@
   <!-- ======================================================= -->
   <!-- FOOTER                                                  -->
   <!-- ======================================================= -->
-  <footer class="footer-section">
+  <footer class="footer-section" style="position: relative;">
+    <div class="neo-sticker sticker-tape-yellow hide-mobile sticker-lg" style="top: -30px; left: -40px; transform: rotate(-12deg);">
+      <img src="sticker/AR.png" alt="Stark Arc Reactor Sticker">
+    </div>
     <div class="container">
       <div class="footer-grid">
-        <div>
+        <div style="position: relative;">
+          <div class="neo-sticker hide-mobile sticker-lg" style="top: -25px; right: -35px; transform: rotate(14deg);">
+            <img src="sticker/IM!.png" alt="Iron Man Badge Sticker">
+          </div>
           <div class="footer-title">INFINITY // HACK '26</div>
           <p class="footer-desc">
             A brutalist 24-hour engineering sprint organized by S.H.I.E.L.D. Level 10 architects. Built for builders who
@@ -2628,7 +2837,10 @@
           </ul>
         </div>
 
-        <div>
+        <div style="position: relative;">
+          <div class="neo-sticker sticker-tape-white hide-mobile sticker-sm" style="bottom: -20px; right: -20px; transform: rotate(-10deg);">
+            <img src="sticker/IIG.png" alt="Iron Gauntlet Sticker">
+          </div>
           <div class="footer-col-title">ORGANIZERS</div>
           <ul class="footer-links">
             <li><a href="/admin">Organizer Command Post</a></li>
@@ -2652,7 +2864,10 @@
   <div id="registration-modal" class="modal-backdrop hidden">
     <div class="modal-box">
 
-      <div class="modal-header-bar">
+      <div class="modal-header-bar" style="position: relative;">
+        <div class="neo-sticker hide-mobile sticker-sm" style="top: -15px; right: 70px; transform: rotate(-10deg);">
+          <img src="sticker/IIG.png" alt="Iron Gauntlet Sticker">
+        </div>
         <div class="modal-title-text">⚡ ASSEMBLE YOUR SQUAD // S.H.I.E.L.D. CLEARANCE</div>
         <button class="modal-close-btn" onclick="closeModal('registration-modal')">✕</button>
       </div>
